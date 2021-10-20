@@ -22,7 +22,7 @@ GET http://localhost:8080/rooms/
 ###
 
 ###
-GET http://localhost:8080/rooms/
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTU3NTYwMn0.xmlgM6yCElzPEMMcfFE9BEc-6NJkogOu8SB5Hqbac3kdf_SfVVzRWlIzir4RcnNEuIT2IQZ26y5VFiOk-HICJA
+GET http://localhost:8080/users/55
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTU4MzIzMX0.UXP9t-xHUxCImFbI_Spp2y3_3YlKKqhu2Jme4s1Wn_e5Lf7q6arGeuLwYVvTXQFEszm6DHxQ0D5e26WRBoXovg
 
 ###
