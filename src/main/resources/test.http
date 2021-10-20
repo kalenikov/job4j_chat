@@ -1,0 +1,28 @@
+POST http://localhost:8080/users/sign-up/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+###
+GET http://localhost:8080/rooms/
+
+###
+
+###
+GET http://localhost:8080/rooms/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTU3NTYwMn0.xmlgM6yCElzPEMMcfFE9BEc-6NJkogOu8SB5Hqbac3kdf_SfVVzRWlIzir4RcnNEuIT2IQZ26y5VFiOk-HICJA
+
+###
