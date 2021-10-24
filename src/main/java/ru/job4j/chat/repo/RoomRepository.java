@@ -1,9 +1,9 @@
 package ru.job4j.chat.repo;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import ru.job4j.chat.model.Room;
 
-@RepositoryRestResource(collectionResourceRel = "rooms", path = "rooms")
-public interface RoomRepository extends PagingAndSortingRepository<Room, Integer> {
+@Repository
+public interface RoomRepository extends JpaRepository<Room, Integer> {
 }

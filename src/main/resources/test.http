@@ -19,6 +19,29 @@ Content-Type: application/json
 ###
 GET http://localhost:8080/rooms/
 
+
+###
+GET http://localhost:8080/messages/2/
+
+###
+
+###
+POST http://localhost:8080/messages/
+Content-Type: application/json
+
+{
+  "text": "new text 1",
+  "roomId": "1"
+}
+
+###
+POST http://localhost:8080/messages/post/
+Content-Type: application/json
+
+{
+  "message": "new text"
+}
+
 ###
 
 ###

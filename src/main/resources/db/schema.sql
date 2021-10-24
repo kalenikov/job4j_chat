@@ -7,7 +7,6 @@ CREATE TABLE rooms
 create table messages
 (
     id      serial primary key,
-    name    varchar(2000),
     text    text,
     created timestamp without time zone not null default now(),
     room_id int references rooms

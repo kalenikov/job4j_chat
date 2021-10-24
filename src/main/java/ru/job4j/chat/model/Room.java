@@ -16,4 +16,8 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    public Room(String name) {
+        this.name = name;
+    }
 }

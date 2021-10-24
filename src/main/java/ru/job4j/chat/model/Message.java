@@ -18,10 +18,14 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
     private String text;
     private Timestamp created = Timestamp.valueOf(LocalDateTime.now());
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
+
+    public Message(String text, Room room) {
+        this.text = text;
+        this.room = room;
+    }
 }
