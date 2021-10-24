@@ -11,7 +11,7 @@ import java.util.List;
 public class MessageService {
 
     @Autowired
-    public MessageRepository repo;
+    private MessageRepository repo;
 
     public List<Message> findAllByRoomId(Integer id) {
         return repo.findAllByRoomIdOrderByCreatedDesc(id);

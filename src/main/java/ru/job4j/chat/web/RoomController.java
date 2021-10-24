@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("rooms")
 public class RoomController {
     @Autowired
-    public RoomService roomService;
+    private RoomService roomService;
 
     @GetMapping("/")
     public List<Room> findAll() {

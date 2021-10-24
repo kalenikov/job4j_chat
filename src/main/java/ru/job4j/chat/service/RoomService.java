@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class RoomService {
     @Autowired
-    public RoomRepository repo;
+    private RoomRepository repo;
 
     public List<Room> findAll() {
         return repo.findAll();

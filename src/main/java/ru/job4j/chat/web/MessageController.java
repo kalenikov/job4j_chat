@@ -18,9 +18,9 @@ import java.util.Optional;
 public class MessageController {
 
     @Autowired
-    public MessageService messageService;
+    private MessageService messageService;
     @Autowired
-    public RoomService roomService;
+    private RoomService roomService;
 
     @GetMapping("/{roomId}")
     public List<Message> findAllByRoomId(@PathVariable Integer roomId) {
