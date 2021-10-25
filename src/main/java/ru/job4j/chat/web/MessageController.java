@@ -11,6 +11,7 @@ import ru.job4j.chat.service.RoomService;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -37,4 +38,14 @@ public class MessageController {
         messageService.save(new Message(messageDto.getText(), room.get()));
     }
 
+    @PatchMapping("/")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void edit(@RequestBody Map<String, String> body) {
+        Optional<Message> message = messageService.findById(Integer.valueOf(body.get("id")));
+        if (message.isEmpty()) {
+            throw new EntityNotFoundException("Message not found");
+        }
+        message.get().setText(body.get("text"));
+        messageService.save(message.get());
+    }
 }

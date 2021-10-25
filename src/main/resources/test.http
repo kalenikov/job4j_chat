@@ -35,11 +35,22 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/messages/post/
+PATCH http://localhost:8080/messages/
 Content-Type: application/json
 
 {
-  "message": "new text"
+  "id": 1,
+  "text": "text1 (edit)"
+}
+
+###
+
+PATCH http://localhost:8080/rooms/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "room1 (edit1)"
 }
 
 ###

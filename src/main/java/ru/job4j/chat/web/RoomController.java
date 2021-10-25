@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import ru.job4j.chat.model.Room;
 import ru.job4j.chat.service.RoomService;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("rooms")
@@ -24,4 +26,15 @@ public class RoomController {
     public void save(@RequestBody String name) {
         roomService.save(new Room(name));
     }
+
+    @PatchMapping("/")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void edit(@RequestBody Room dto) {
+        Optional<Room> room = roomService.findById(dto.getId());
+        if (room.isEmpty()) {
+            throw new EntityNotFoundException("Room not found");
+        }
+        roomService.save(Room.of(dto.getId(), dto.getName()));
+    }
+
 }
