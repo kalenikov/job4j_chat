@@ -7,6 +7,7 @@ import ru.job4j.chat.model.Room;
 import ru.job4j.chat.service.RoomService;
 
 import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,13 +24,13 @@ public class RoomController {
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody String name) {
-        roomService.save(new Room(name));
+    public void save(@Valid @RequestBody Room dto) {
+        roomService.save(new Room(dto.getName()));
     }
 
     @PatchMapping("/")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void edit(@RequestBody Room dto) {
+    public void edit(@Valid @RequestBody Room dto) {
         Optional<Room> room = roomService.findById(dto.getId());
         if (room.isEmpty()) {
             throw new EntityNotFoundException("Room not found");

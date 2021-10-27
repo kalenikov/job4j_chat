@@ -3,6 +3,7 @@ package ru.job4j.chat.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor(staticName = "of")
 @Getter
@@ -15,6 +16,8 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotBlank(message = "Name must be not empty")
     private String name;
 
     public Room(String name) {
