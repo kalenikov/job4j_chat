@@ -4,9 +4,6 @@
 
 Basic REST API for chat. 
 
-## №Project description
-This project represent url shortener rest-service with jwt-authorization
-
 ## Used technologies
 Java 14
 Spring Boot 2
