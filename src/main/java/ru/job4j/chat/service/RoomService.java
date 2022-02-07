@@ -1,6 +1,5 @@
 package ru.job4j.chat.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.job4j.chat.model.Room;
 import ru.job4j.chat.repo.RoomRepository;
@@ -10,8 +9,11 @@ import java.util.Optional;
 
 @Service
 public class RoomService {
-    @Autowired
-    private RoomRepository repo;
+    private final RoomRepository repo;
+
+    public RoomService(RoomRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Room> findAll() {
         return repo.findAll();

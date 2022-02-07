@@ -19,8 +19,8 @@ import static ru.job4j.chat.security.JWTAuthenticationFilter.SIGN_UP_URL;
 
 @EnableWebSecurity
 public class WebSecurityJWT extends WebSecurityConfigurerAdapter {
-    private UserService userService;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final UserService userService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public WebSecurityJWT(UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userService = userService;

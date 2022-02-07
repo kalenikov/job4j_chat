@@ -14,8 +14,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("rooms")
 public class RoomController {
-    @Autowired
-    private RoomService roomService;
+    private final RoomService roomService;
+
+    public RoomController(RoomService roomService) {
+        this.roomService = roomService;
+    }
 
     @GetMapping("/")
     public List<Room> findAll() {

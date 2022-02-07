@@ -20,10 +20,13 @@ import java.util.Optional;
 @RequestMapping("messages")
 public class MessageController {
 
-    @Autowired
-    private MessageService messageService;
-    @Autowired
-    private RoomService roomService;
+    private final MessageService messageService;
+    private final RoomService roomService;
+
+    public MessageController(MessageService messageService, RoomService roomService) {
+        this.messageService = messageService;
+        this.roomService = roomService;
+    }
 
     @GetMapping("/{roomId}")
     public List<Message> findAllByRoomId(@PathVariable @NotBlank Integer roomId) {
